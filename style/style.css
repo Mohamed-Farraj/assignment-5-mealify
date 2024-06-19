@@ -1,0 +1,687 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+:root {
+  --main-padding: 2rem 0 1.5rem 0;
+  --background-color: #eeeeee;
+  --main-color: #ce1212;
+  --secondary-color: #e61414;
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, "Segoe UI", "Open Sans", "Helvetica Neue", sans-serif;
+}
+header {
+  position: fixed;
+  background-color: white;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-block: 15px 10px;
+  z-index: 10;
+  box-shadow: 0px 0px 10px gray;
+  font-family: system-ui, "Segoe UI", "Open Sans", "Helvetica Neue", sans-serif;
+}
+.container {
+  margin: auto auto;
+  width: 89%;
+  display: flex;
+}
+header .container {
+  justify-content: space-between;
+  align-items: center;
+}
+ul {
+  list-style: none;
+}
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 35px;
+  font-size: 26px;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+nav ul a {
+  font-weight: 600;
+  color: gray;
+  transition: color 0.5s;
+}
+nav ul a:hover {
+  color: black;
+  transition: color 0.5s;
+}
+.logo h1 {
+  font-size: 30px;
+}
+.mode {
+  font-size: 25px;
+}
+.mode i{margin:5px;}
+.mode .menu{display:none;}
+nav li {
+  position: relative;
+  padding: 8px;
+  overflow: hidden;
+}
+nav li::before {
+  position: absolute;
+  content: "";
+  width: 80%;
+  height: 2px;
+  background-color: var(--main-color);
+  bottom: 0;
+  left: 10%;
+  transform: translateX(-120%);
+  transition: transform 0.5s;
+}
+nav li:hover::before {
+  transform: translateX(0);
+}
+.liHome a {
+  color: black;
+}
+.liHome::before {
+  transform: translateX(0);
+}
+
+/* ========================================================================================================= */
+
+.home {
+  padding: var(--main-padding);
+  display: flex;
+  align-items: flex-end;
+  height: 100vh;
+  color: #37373f;
+  background-color: var(--background-color);
+}
+img {
+  width: 100%;
+  display: block;
+}
+.home .container {
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1.5rem;
+}
+.home .heroimage {
+  flex-basis: 38%;
+}
+.home .describition {
+  align-self: center;
+  flex-basis: 40%;
+}
+.home .describition h2 {
+  font-family: "Amatic Sc";
+  font-size: 98px;
+  line-height: normal;
+  font-weight: 700;
+  margin: 0;
+}
+.home .describition p {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 24px;
+  line-height: 1.6;
+}
+.home .describition button ,form button{
+  padding: 20px;
+  width: 40%;
+  color: white;
+  border: transparent;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.home .describition .book:hover ,form button:hover{
+  background-color: var(--secondary-color);
+}
+.home .describition .book ,form button{
+  background-color: var(--main-color);
+  border-radius: 2rem;
+  border-top-left-radius: 0;
+}
+.home .describition .video {
+  display: flex;
+  width: fit-content;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 24px;
+}
+.home .describition .video:hover span {
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  background-color: transparent;
+  transform: rotate(315deg);
+}
+.home .describition .video:hover {
+  color: var(--secondary-color);
+}
+.home .describition .video span {
+  height: 100px;
+  width: 100px;
+  border: solid var(--main-color) 15px;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: flex;
+  background-color: transparent;
+  color: black;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(315deg);
+  transition: all 0.5s;
+}
+.home .describition .video span i {
+  height: 66px;
+  width: 66px;
+  border-radius: 50%;
+  border: transparent;
+  background-color: white;
+  transform: rotate(45deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.home .heroimage img {
+  filter: drop-shadow(1px 1px 15px);
+}
+.home .heroimage {
+  transition: all 0.5s;
+  position: relative;
+  animation: shake 0.25s 0s infinite;
+}
+.home .heroimage:hover img {
+  /* animation: shake 0.25s 0s infinite; */
+  transition: all 0.5s;
+
+  /* transform: rotate(360deg); */
+}
+@keyframes shake {
+  0% {
+    transform: translateX(-2px);
+    transform: rotate(1deg);
+  }
+  25% {
+    transform: translateY(-2px);
+  }
+  50% {
+    transform: translateX(2px);
+    transform: rotate(-1deg);
+  }
+  75% {
+    transform: translateY(2px);
+  }
+  100% {
+    transform: translate(0, 0);
+    transform: rotate(0deg);
+  }
+}
+
+/* ====================================================================================================*/
+
+.chefs,
+.gallery,
+.contact {
+  text-align: center;
+  padding-block: 100px;
+}
+
+.chefs .container,
+.gallery .container,
+.contact .container {
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.sectiontitle span {
+  color: gray;
+  font-size: 100%;
+}
+.sectiontitle h2 {
+  font-family: "Amatic Sc";
+  font-size: 75px;
+  font-weight: 400;
+}
+.sectiontitle h2 span {
+  color: var(--main-color);
+}
+
+.chefs .cards {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  column-gap: 20px;
+}
+.chefs .cards .card {
+  display: flex;
+  width: calc((100% / 3) - 40px);
+  flex-direction: column;
+  border-radius: 10px;
+  border: solid 0px transparent;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px gray;
+  transition: all 0.5s;
+}
+.chefs .cards .card:hover {
+  transform: scale(1.05);
+}
+.chefs .cards .card .chefimg {
+  position: relative;
+}
+.chefs .cards .card .chefimg .soc {
+  position: absolute;
+  width: 20%;
+  height: 70%;
+  right: -3.8rem;
+  top: 15%;
+  background-color: #eeeeee52;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.5rem;
+  border: solid 0;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+
+.chefs .cards .card:hover .soc {
+  right: 1.1rem;
+  transition-delay: 0.5s;
+}
+
+.chefs .cards .card .chefimg .soc span a {
+  color: gray;
+  transition: all 0.5s;
+}
+.chefs .cards .card .chefimg .soc span:hover a {
+  color: #37373f;
+}
+
+.chefs .cards .card .chefimg::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background-image: url("../media/Mealfy/team-shape.svg");
+  background-size: cover;
+  background-position: center center;
+}
+
+.chefs .cards .card .aboutchef :not(h2) {
+  color: gray;
+}
+.chefs .cards .card .aboutchef {
+  padding: 1.1rem;
+}
+h2 {
+  margin-block: 1rem;
+}
+
+/* =================================================================================================================== */
+
+.gallery {
+  background-color: var(--background-color);
+}
+
+/* .gallery .container{
+} */
+
+.gallery .container .panel {
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.gallery .container .rightpanel,
+.leftpanel,.middlepanel {
+  width: calc(100% / 3);
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  row-gap: 1.2rem;
+}
+
+.gallery .container .leftpanel {
+  align-items: center;
+}
+.gallery .container .rightpanel {
+  align-items: center;
+}
+
+/* .gallery .container .leftpanel :nth-child(even) {
+  align-self: flex-end;
+}
+.gallery .container .rightpanel :nth-child(odd) {
+  align-self: flex-start;
+} */
+
+.pic {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border: white solid 5px;
+  border-radius: 5px;
+}
+.layer {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 20px;
+  transition: all 0.5s;
+  text-align: center;
+}
+.pic:hover .layer {
+  bottom: 0;
+}
+.layer h3 {
+  margin-block: 0.5rem;
+  font-size: 36px;
+  width: 100%;
+}
+.layer p {
+  margin-block: 0.5rem;
+  font-size: 1rem;
+}
+
+/* ============================================================================================================ */
+
+.map {
+  width: 100%;
+}
+.map iframe {
+  width: 100%;
+}
+.contact .container{
+    row-gap: 1rem;
+}
+
+.contactinfo {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 30px;
+}
+.contactinfo .info {
+  width: 49%;
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+  background-color: var(--background-color);
+  text-align: start;
+  padding: 1.5rem;
+  column-gap: 1rem;
+}
+.contactinfo .info h3{color: grey;margin-block:.5rem}
+.contactinfo .info p{margin-block:.5rem}
+
+.contactinfo .info span {
+  display: flex;
+  height: 80px;
+  width: 80px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #ce1212;
+  
+}
+.contactinfo .info span i{
+    font-size: 1.1rem;
+    color: white;
+}
+
+.contactform{
+    padding:1rem;
+    box-shadow: 0px 0px 10px gray;
+
+}
+form{
+    width: 100%;
+    display: flex;
+    flex-flow: row  wrap;
+    row-gap: 1rem;
+    justify-content: space-between;
+    padding: 1rem;
+
+}
+form .name,.email{
+    width: 49%;
+
+}
+form input,
+form textarea {
+    padding: 1rem;
+    width: 100%;
+    /* transition: all 0.5s; */
+    border: #37373f22 solid 2px;
+    outline-color: #37373f22 solid 2px;
+}
+
+form textarea {
+    height: 30vh;
+}
+
+form input:focus,
+form textarea:focus {
+    outline-color: var(--main-color);
+}
+
+
+form button{
+    border-radius: 2rem;
+    margin: 1rem auto;
+    width: 20%;
+}
+
+
+/* ==================================================================================================== */
+
+
+footer{
+    background-image: url('../media/Mealfy/textured-metal-background.jpg');
+    background-size: cover;
+    background-position: center center;
+    color: white;
+    padding-block: 50px;
+}
+footer .breaf,footer .newsletter,footer .touch{padding:1rem}
+
+footer a{color: white;}
+
+footer .breaf{
+  width: 40%;
+}
+
+footer .logo{
+    display: flex;
+    width: 100%;
+    column-gap: 10px;
+    align-items: center;
+}
+footer .logo span{width: 20%;}
+
+footer .social h3{text-align: center;}
+footer .social .socialicons{
+    border-top: solid 2px white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1.5rem 0;
+    font-size: 1.3rem;
+}
+
+footer .newsletter{flex-basis:75%;}
+footer .newsletter form{flex-wrap: nowrap; padding:0;} 
+footer .newsletter input{width:70%;} 
+footer .newsletter form button{border-radius: 0; margin:0 5px;  flex-grow: 5;display: flex; justify-content: center;align-items: center;column-gap: 8px;}
+
+.links ul{
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+}
+.links li{
+  width: 49%;
+  transition: all .2s;
+  padding-block: 0.5rem;
+}
+.links li i{margin-right: 10px;}
+.links li:hover{
+  background-color: #222222;
+  transform: translateX(5px);
+}
+.touch ul li span{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  color: var(--main-color);
+
+}
+.touch ul li{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1rem;
+  width: 100%;
+}
+.touch ul{
+  display: flex;
+  flex-flow: row wrap;
+    row-gap: 1rem;
+    padding: 0;
+}
+.touch
+{
+  width: 40%;
+}
+ul{padding-left:0}
+
+/* =======================================================================================================*/
+
+@media screen and (max-width:1000px)
+{
+  .mode .menu{display: inline;}
+  .menu:hover ul{right: 0;}
+  nav ul{
+    flex-direction: column ;
+    justify-content:flex-start ;
+    row-gap: 10px;
+    position: absolute;
+    background-color: white;
+    z-index: 10;
+    top: 0;
+    right: -50%;
+    height: 100vh;
+    width: 50%;
+    transition: all 1s;
+  }
+  
+  nav ul::before
+  {
+    content: "Exit";
+  }
+  .home{
+    height: fit-content;
+  }
+
+  .home .container{
+    flex-direction: column;
+    text-align: center;
+    justify-content: flex-end;
+    height: 100%;
+    padding-top:50px
+  }
+  .heroimage {
+    order: 1;
+    margin-block:50px 1rem;
+  }
+  .home .container .describition{order: 2;}
+
+  .chefs .container{
+    flex-direction: column;
+  }
+  .chefs .container .cards{
+    flex-direction: column;
+    row-gap: 40px;
+  }
+  
+  .chefs .container .card{
+    width:100%;
+  }
+
+  .gallery .container .panel{
+    flex-direction: column;
+  }
+  .gallery .container .panel .leftpanel,.middlepanel,.gallery .container .panel .rightpanel{
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .gallery .container .panel .pic
+  {
+      width:100%;
+  }
+
+  .contact .container .contactinfo .info{
+    width:100%;
+    padding:15px;
+    flex-flow: row;
+    column-gap: normal;
+  }
+  .contact .container .contactinfo .info .infodescribtion{
+    flex-basis: 80%;
+  }
+   .contactform form{
+    flex-direction: column;
+  }
+  form .name,.email{
+    width: 100%;
+}
+.contact form button{width:100%}
+
+footer .container{
+  flex-direction: column;
+}
+.container .breaf,.container .newsletter,.container .touch{
+  width: 100%;
+}
+.newsletter form{
+  flex-direction: column;
+}
+.newsletter form input, .newsletter form button{width: 100%;}
+.newsletter{display:flex;flex-direction: column; column-gap: 1px;}
+}
+
+
+
